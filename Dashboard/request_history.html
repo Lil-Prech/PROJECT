@@ -37,7 +37,6 @@
                               <th scope="col">Request Date</th>
                               <th scope="col">Blood Type</th>
                               <th scope="col">Quantity</th>
-                              <th scope="col">Urgency Level</th>
                               <th scope="col">Status</th>
                               <th>Action</th>
                             </tr>
@@ -49,7 +48,6 @@
                               <td>20/07/2024</td>
                               <td>A+</td>
                               <td>2 Bags</td>
-                              <td>Very Urgent</td>
                               <td>Approved</td>
                               
                               <td><i class="ri-edit-line" onclick="openEditModal(this)"></i> <i class="ri-delete-bin-6-line"></i></td>
@@ -98,10 +96,6 @@
                             <input type="text" class="form-control" id="addQuantity">
                         </div>
                         <div class="mb-3">
-                            <label for="addUrgencyLevel" class="form-label">Urgency Level</label>
-                            <input type="address" class="form-control" id="addAddress">
-                        </div>
-                        <div class="mb-3">
                             <label for="addstatus" class="form-label">Status</label>
                             <select id="addstatus" class="form-select">
                             <option selected>Approved</option>
@@ -144,10 +138,6 @@
                         <div class="mb-3">
                             <label for="editQuantity" class="form-label">Quantity</label>
                             <input type="date" class="form-control" id="editQuantity">
-                        </div>
-                        <div class="mb-3">
-                            <label for="editUrgencyLevel" class="form-label">Urgency Level</label>
-                            <input type="text" class="form-control" id="editUrgencyLevel">
                         </div>
                         <div class="mb-3">
                             <label for="editstatus" class="form-label">Status</label>
