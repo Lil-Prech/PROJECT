@@ -20,7 +20,6 @@
                 <h1 class="tabletitle">Blood Request</h1>
             </div>
             <div class="col text-end mt-3">
-                <button class="btn me-2 " id="btnAddDonor" data-bs-toggle="modal" data-bs-target="#addModal"><i class="ri-add-line me-1"></i>Add Request</button>
                 <a href="home.html">
                     <button class="btn btn-secondary"><i class="ri-arrow-go-back-line me-1"></i>Back</button>
                 </a>
@@ -53,69 +52,12 @@
                               <td>03/11/2000</td>
                               <td>23456789</td>
                               <td>Santa</td>
-                              <td>fcsvdghbjknlc</td>
+                              <td>Very Urgent</td>
+                              <td>Shortage of Blood</td>
                               <td><i class="ri-edit-line" onclick="openEditModal(this)"></i> <i class="ri-delete-bin-6-line"></i></td>
                             </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>O-</td>
-                              <td>05/03/2024</td>
-                              <td>17/03/2025</td>
-                              <td>1</td>
-                               <td>Reserved</td> 
-                              <td><i class="ri-edit-line" onclick="openEditModal(this)"></i> <i class="ri-delete-bin-6-line"></i></td>
-                            </tr>
-                           
                           </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Add modal-->
-    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addModalLabel">Add Blood Request</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="addForm">
-                        <div class="mb-3">
-                            <label for="addName" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="addName">
-                        </div>
-                        <div class="mb-3">
-                            <label for="addBloodType" class="form-label">Blood Type</label>
-                            <input type="text" class="form-control" id="addBloodType">
-                        </div>
-                        <div class="mb-3">
-                            <label for="addGender" class="form-label">Gender</label>
-                            <input type="Date" class="form-control" id="addGender">
-                        </div>
-                        <div class="mb-3">
-                            <label for="addUrgencyLevel" class="form-label">Urgency Level</label>
-                            <input type="address" class="form-control" id="addAddress">
-                        </div>
-                        <div class="mb-3">
-                            <label for="addContactInfo" class="form-label">Contact information</label>
-                            <input type="Date" class="form-control" id="addContactInfo">
-                        </div>
-                        <div class="mb-3">
-                            <label for="addAddress" class="form-label">Address</label>
-                            <input type="address" class="form-control" id="addAddress">
-                        </div>
-                        <div class="mb-3">
-                            <label for="addMedicalCondition" class="form-label">Medical Condition</label>
-                            <input type="text" class="form-control" id="addMedicalCondition">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn me-2 " id="btnrqst" onclick="addDonor()">Add Request</button>
                 </div>
             </div>
         </div>
