@@ -1,0 +1,36 @@
+#wrap{
+    position: relative;
+}
+
+#vid,
+#content {
+    position: relative;
+    width: 100%;
+
+}
+#vid {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#content{
+    z-index: 2;
+}
+
+.container
+.card
+.row
+{
+    width: 100%;
+    max-height: 25%;
+    background-color: #de1212;
+}
+.card{
+    background-color: rgba ( 255 ,255,255. 0.7);
+    box-shadow: 2px 6px 100px #de1212;
+}

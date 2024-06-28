@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*{
+    font-family: "Playfair Display", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+    margin-top: 2rem;
+}
+.table .table-striped{
+    border-radius: 50px;
+    margin-left: 2rem;
+    margin-right:2rem;
+}
+
+#btnrqst,
+#btnAddDonor{
+    background-color: #8a1212;
+}
+td i{
+    position: relative;
+    justify-content: space-around;
+    cursor: pointer;
+  
+}
+
+.ri-edit-line{
+    color: blue;
+}
+
+.ri-delete-bin-6-line{
+    color: #8a1212;
+}
