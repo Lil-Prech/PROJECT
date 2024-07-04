@@ -21,7 +21,7 @@ $blood_groups = getBloodGroup($conn);
   <!--<img class="bg-image" src="assets/images/istockphoto-1338751268-612x612.jpg">-->
   <div class="container-fluid">
     <header class="text-center">
-      <h1 class="display-6">Request For Blood</h1>
+      <h1 class="display-6">Registration To Request For Blood</h1>
     </header>
 
   </div>
@@ -58,31 +58,14 @@ $blood_groups = getBloodGroup($conn);
         <input type="text" class="form-control" name="tel" id="inputPassword4">
       </div>
       <div class="col-12">
-        <label for="inputAddress" class="form-label">Hospital Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-      </div>
-      <div class="col-12">
         <label for="inputgender" class="form-label">Gender</label>
         <select id="inputState" name="gender" class="form-select">
-          <option value="female" selected>Female</option>
+          <option>Select a gender</option>
+          <option value="female">Female</option>
           <option value="male">Male</option>
         </select>
         <label for="dob" class="form-label">Date of Birth:</label>
         <input type="date" id="dob" name="birth_date" class="form-control">
-        <label for="inputAddress2" class="form-label">Reason For Blood Request</label>
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control" name="reason_for_blood" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <label for="dob" class="form-label">When is it Required?</label>
-        <input type="text" class="form-control">
-      </div>
-      <div class="col-12">
-        <label for="inputState" class="form-label">Blood Group</label>
-        <select id="inputState" name="blood_group" class="form-select">
-          <option selected>Blood Group</option>
-          <?php foreach ($blood_groups as $bloodgroup) { ?>
-            <option value="<?php echo ($bloodgroup['id']) ?>"><?php echo ($bloodgroup['type']) ?></option>
-          <?php } ?>
-        </select>
       </div>
       </div>
       <div class="col-md-6">

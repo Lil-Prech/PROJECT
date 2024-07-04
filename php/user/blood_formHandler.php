@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $tel = htmlspecialchars($_POST['tel']);
     $gender = htmlspecialchars($_POST['gender']);
     $birth_date = htmlspecialchars($_POST['birth_date']);
+    $blood_group = htmlspecialchars($_POST['blood_group']);
     $city = htmlspecialchars($_POST['city']);
     $postal_code = htmlspecialchars($_POST['postal_code']);
     $zip = htmlspecialchars($_POST['zip']);
@@ -19,10 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (
         empty($f_name) || empty($l_name) || empty($email) || empty($tel) || empty($gender) ||
-        empty($birth_date) ||  empty($city) || empty($postal_code) ||
+        empty($birth_date) || empty($blood_group) || empty($city) || empty($postal_code) ||
         trim($f_name) == '' || trim($l_name) == '' ||
         trim($email) == '' || trim($tel) == '' || trim($gender) == '' || trim($birth_date) == '' ||
-         trim($city) == ''
+        trim($blood_group) == '' || trim($city) == ''
     ) {
         $_SESSION['error'] = "All fields must be filled";
         header("Location: " . $_SERVER['HTTP_REFERER']);
@@ -44,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    $query = "INSERT INTO users (first_name, last_name, email, phone_number, gender, birth_date) 
-    VALUES (:f_name, :l_name,  :email, :tel, :gender, :birth_date)";
+    $query = "INSERT INTO users (first_name, last_name, email, phone_number, gender, blood_group, birth_date) 
+    VALUES (:f_name, :l_name,  :email, :tel, :gender, :blood_group, :birth_date)";
 
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':f_name', $f_name);
@@ -53,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':tel', $tel);
     $stmt->bindParam(':gender', $gender);
+    $stmt->bindParam(':blood_group', $blood_group);
     $stmt->bindParam(':birth_date', $birth_date);
     $result = $stmt->execute();
 
@@ -68,6 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $_SESSION['user'] = $email;
     $_SESSION['name'] = $f_name.' '.$l_name;
-    header("Location: ../../blood_form.php");
+    header("Location: blood_form.php");
     exit();
 }
