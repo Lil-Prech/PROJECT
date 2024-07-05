@@ -28,7 +28,8 @@ td i{
   
 }
 
-.ri-edit-line{
+.ri-edit-line,
+.ri-eye-line{
     color: blue;
 }
 

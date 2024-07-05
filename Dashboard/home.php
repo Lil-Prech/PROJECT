@@ -18,10 +18,10 @@
                 <ul>
                     <li>
                         <a href="#">
-                            <span class="icon">
-                                <i class="ri-apple-line"></i>
+                            <span class="icon " id="logo">
+                                <img src="../assets/images/logoooo (2).png">
                             </span>
-                            <span class="title">Brand Name</span>
+                            <span class="title">E-Vitalant</span>
                         </a>
                     </li>
                     <li>
@@ -39,13 +39,6 @@
                                 <i class="ri-hand-heart-fill"></i>
                             </span>
                             <span class="title">Donor</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="icon"><i class="ri-group-line"></i>
-                            </span>
-                            <span class="title">Patients</span>
                         </a>
                     </li>
                     <li>
@@ -73,7 +66,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="bloodstock.php">
+                        <a href="bloodstock.html">
                             <span class="icon">
                                 <i class="ri-store-3-line"></i>
                             </span>
@@ -81,7 +74,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../index.php">
+                        <a href="messages.php">
+                            <span class="icon">
+                                <i class="ri-message-line"></i>
+                            </span>
+                            <span class="title">Messages</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html">
                             <span class="icon">
                                 <i class="ri-logout-box-r-line"></i>
                             </span>
@@ -108,7 +109,37 @@
                 </div>
                 
                 <div class="user">
-                    <img src="../assets/images/Picture3-1024x760.jpg" alt="...">
+                    <img src="../assets/images/profile.jpeg" alt="Profile"  onclick="toggleMenu()">
+                    <div class="sub-menu-wrap" id="subMenu">
+                       <div class="sub-menu">
+                        <div class="user-info">
+                            <h3>Regional Hospital Bamenda</h3>
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                            <i class="ri-profile-line"></i>
+                            <p>Edit Profile</p>  
+                            <span>></span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <i class="ri-settings-2-line"></i>
+                            <p>Settings</p>  
+                            <span>></span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <i class="ri-question-line"></i>
+                            <p>Help & Support</p>  
+                            <span>></span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <i class="ri-logout-box-r-line"></i>
+                            <p>Exit</p>  
+                            <span>></span>
+                        </a>
+
+                    
+                       </div>
+                    </div>
                 </div>
             </div>
 
@@ -191,41 +222,45 @@
                     </div>
                 </div>
             </div>
-            <div class="cardbox-3">
-                <div class="card">
-                    <div class="content">
-                        <div class="iconBx">
-                            <i class="ri-group-fill"></i>
-                           </div>
-                       <div class="cardname">Total Donors </div>
-                       <div class="numbers">10</div>
+                <div class="cardbox-3">
+                    <div class="card">
+                        <div class="content">
+                            <div class="iconBx">
+                                <i class="ri-group-fill"></i>
+                            </div>
+                            <div class="cardname">Total Donors</div>
+                            <div class="numbers">10</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="iconBx">
+                                <i class="ri-refresh-line"></i>
+                            </div>
+                            <div class="cardname">Total Requests</div>
+                            <div class="numbers">10</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="iconBx">
+                                <i class="ri-check-double-fill"></i>
+                            </div>
+                            <div class="cardname">Approved Requests</div>
+                            <div class="numbers">10</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="iconBx">
+                                <i class="ri-drop-fill"></i>
+                            </div>
+                            <div class="cardname">Total Blood (in bags)</div>
+                            <div class="numbers">70 Bags</div>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="content">
-                        <div class="iconBx">
-                            <i class="ri-refresh-line"></i>
-                           </div>
-                       <div class="cardname">Total Requests</div>
-                       <div class="numbers">10</div>
-                    </div>
-                    <div class="content">
-                        <div class="iconBx">
-                            <i class="ri-check-double-fill"></i>
-                           </div>
-                       <div class="cardname">Approved Requests</div>
-                       <div class="numbers">10</div>
-                    </div>
-                    <div class="content">
-                        <div class="iconBx">
-                            <i class="ri-drop-fill"></i>
-                           </div>
-                       <div class="cardname">Total Blood(in bags)</div>
-                       <div class="numbers">70Bags</div>
-                    </div>
-                    
-                </div>
-            </div>
+            
 
            
            
