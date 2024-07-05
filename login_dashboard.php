@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +33,10 @@
                                                 <label class="form-label" for="typeEmailX">Email</label>
                                                 <input type="email" name="email" id="typeEmailX"
                                                     class="form-control form-control-lg" />
+                                                <?php if (isset($_SESSION['Loginerror'])) { ?>
+                                                    <code style="color:red;"><?php echo ($_SESSION['Loginerror']) ?></code>
+                                                    <?php unset($_SESSION['Loginerror']);
+                                                } ?>
                                             </div>
 
                                             <div class="form-outline form-white mb-4">
