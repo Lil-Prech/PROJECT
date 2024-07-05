@@ -16,7 +16,7 @@ $blood_groups = getBloodGroup($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="CSS/request.css" rel="stylesheet">
+    <link href="../CSS/request.css" rel="stylesheet">
     <title>Request Blood</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -32,21 +32,21 @@ $blood_groups = getBloodGroup($conn);
 
     </div>
     <section class="container my-2  w-50 text-light p-2">
-        <form class="row g-3" action="php/user/blood_formHandler.php" method="POST">
+        <form class="row g-3" action="../php/user/blood_formHandler.php" method="POST">
             <div class="col-12">
                 <label for="inputName" class="form-label">User Name</label>
-                <input type="text" class="form-control" id="inputUname" value="<?php echo($_SESSION['name']) ?>">
+                <input type="text" name="name" class="form-control" id="inputUname" value="<?php echo($_SESSION['name']) ?>">
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Hospital Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <input type="text" name="Haddress" class="form-control" id="inputAddress">
             </div>
             <div class="col-12">
                 <label for="inputAddress2" class="form-label">Reason For Blood Request</label>
                 <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                 <label for="dob" class="form-label">When is it Required?</label>
-                <input type="text" class="form-control">
+                <input type="date" name="date" class="form-control" required>
             </div>
             <div class="col-12">
                 <label for="inputState" class="form-label">Blood Group</label>

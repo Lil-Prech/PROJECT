@@ -6,70 +6,42 @@ require 'connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $f_name = htmlspecialchars($_POST['f_name']);
-    $l_name = htmlspecialchars($_POST['l_name']);
-    $email = htmlspecialchars($_POST['email']);
-    $tel = htmlspecialchars($_POST['tel']);
-    $gender = htmlspecialchars($_POST['gender']);
-    $birth_date = htmlspecialchars($_POST['birth_date']);
+    $name = htmlspecialchars($_POST['name']);
+    $date = htmlspecialchars($_POST['date']);
     $blood_group = htmlspecialchars($_POST['blood_group']);
-    $city = htmlspecialchars($_POST['city']);
-    $postal_code = htmlspecialchars($_POST['postal_code']);
-    $zip = htmlspecialchars($_POST['zip']);
-    $is_checked = $_POST['is_checked'];
+    $description = htmlspecialchars($_POST['description']);
+    $hospital_address = htmlspecialchars($_POST['Haddress']);
+
 
     if (
-        empty($f_name) || empty($l_name) || empty($email) || empty($tel) || empty($gender) ||
-        empty($birth_date) || empty($blood_group) || empty($city) || empty($postal_code) ||
-        trim($f_name) == '' || trim($l_name) == '' ||
-        trim($email) == '' || trim($tel) == '' || trim($gender) == '' || trim($birth_date) == '' ||
-        trim($blood_group) == '' || trim($city) == ''
+        empty($name) || empty($blood_group) || empty($description) || empty($hospital_address) ||
+        trim($name) == '' || trim($blood_group) == '' ||
+        trim($description) == '' || trim($hospital_address) == ''
     ) {
         $_SESSION['error'] = "All fields must be filled";
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit();
     }
 
-    if(empty($is_checked)){
-        $_SESSION['termError'] = "Please agree to the terms and conditions";
-        header("Location: " . $_SERVER['HTTP_REFERER']);
-        exit();
-    }
-
-    $query1 = "SELECT * FROM users WHERE email ='$email'";
-    $user = $conn->query($query1)->fetch(PDO::FETCH_ASSOC);
-
-    if(!empty($user)){
-        $_SESSION['Existerror'] = "User already exists! Try another email or login";
-        header("Location: " . $_SERVER['HTTP_REFERER']);
-        exit();
-    }
-
-    $query = "INSERT INTO users (first_name, last_name, email, phone_number, gender, blood_group, birth_date) 
-    VALUES (:f_name, :l_name,  :email, :tel, :gender, :blood_group, :birth_date)";
-
+    $query = "INSERT INTO blood_request (requester_name, blood_group_id, description, hospital_name, required_date) VALUES 
+                (:name, :blood_group, :description, :hospital_address,:date)";
     $stmt = $conn->prepare($query);
-    $stmt->bindParam(':f_name', $f_name);
-    $stmt->bindParam(':l_name', $l_name);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':tel', $tel);
-    $stmt->bindParam(':gender', $gender);
+    $stmt->bindParam(':name', $name);
     $stmt->bindParam(':blood_group', $blood_group);
-    $stmt->bindParam(':birth_date', $birth_date);
+    $stmt->bindParam(':description', $description);
+    $stmt->bindParam(':hospital_address', $hospital_address);
+    $stmt->bindParam(':date', $date);
+
     $result = $stmt->execute();
 
-    if($result){
-        $id = $conn->lastInsertId();
-        $query2 = "INSERT INTO user_address (user_id, city, postal_code, zip) VALUES ('$id' ,:city, :postal_code, :zip)";
-        $sql = $conn->prepare($query2);
-        $sql->bindParam(':city', $city);
-        $sql->bindParam(':postal_code', $postal_code);
-        $sql->bindParam(':zip', $zip);
-        $sql->execute();
+    if ($result) {
+        $_SESSION['success'] = "Blood Requested Successfully";
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    } else {
+        $_SESSION['error'] = "An error occurred";
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit();
     }
 
-    $_SESSION['user'] = $email;
-    $_SESSION['name'] = $f_name.' '.$l_name;
-    header("Location: blood_form.php");
-    exit();
 }
