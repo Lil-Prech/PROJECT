@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2024 at 08:34 PM
+-- Generation Time: Jul 05, 2024 at 10:23 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -73,12 +73,20 @@ INSERT INTO `blood_groups` (`id`, `type`) VALUES
 
 CREATE TABLE `blood_request` (
   `id` int(11) NOT NULL,
-  `requester_id` int(11) NOT NULL,
-  `dscription` text NOT NULL,
+  `requester_name` varchar(50) NOT NULL,
+  `description` text NOT NULL,
   `required_date` datetime NOT NULL,
-  `hospital_id` int(11) NOT NULL,
+  `hospital_name` varchar(50) NOT NULL,
   `blood_group_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `blood_request`
+--
+
+INSERT INTO `blood_request` (`id`, `requester_name`, `description`, `required_date`, `hospital_name`, `blood_group_id`) VALUES
+(1, 'Paula Knight French', 'My ill daughter', '2030-10-23 00:00:00', 'Bafoussam-Bamenda', 0),
+(2, 'Paula Knight French', 'To save an anaemic patient', '2035-06-23 00:00:00', 'Bafoussam-Bamenda', 3);
 
 -- --------------------------------------------------------
 
@@ -212,8 +220,7 @@ ALTER TABLE `blood_groups`
 -- Indexes for table `blood_request`
 --
 ALTER TABLE `blood_request`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `requests` (`requester_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `donated_blood`
@@ -265,7 +272,7 @@ ALTER TABLE `blood_groups`
 -- AUTO_INCREMENT for table `blood_request`
 --
 ALTER TABLE `blood_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `donated_blood`
@@ -296,16 +303,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `user_address`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `blood_request`
---
-ALTER TABLE `blood_request`
-  ADD CONSTRAINT `requests` FOREIGN KEY (`requester_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
