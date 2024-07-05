@@ -82,7 +82,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../index.html">
+                        <a href="../php/admin/logout.php">
                             <span class="icon">
                                 <i class="ri-logout-box-r-line"></i>
                             </span>

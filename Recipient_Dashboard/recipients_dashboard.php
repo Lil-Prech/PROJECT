@@ -34,15 +34,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="blood_requested.html">
+                        <a href="blood_form.php">
                             <span class="icon">
                                 <i class="ri-drop-fill"></i>
                             </span>
-                            <span class="title">Blood Requested</span>
+                            <span class="title">Request Blood</span>
                         </a>
                     </li>
                     <li>
-                        <a href="appoint.html">
+                        <a href="appoint.php">
                             <span class="icon">
                                 <i class="ri-calendar-schedule-line"></i>
                             </span>
@@ -50,7 +50,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="message.html">
+                        <a href="message.php">
                             <span class="icon" >
                                 <i class="ri-message-line"></i>
                             </span>
@@ -59,7 +59,7 @@
                     </li>
 
                     <li>
-                        <a href="../index.html">
+                        <a href="../php/admin/logout.php">
                             <span class="icon">
                                 <i class="ri-logout-box-r-line"></i>
                             </span>

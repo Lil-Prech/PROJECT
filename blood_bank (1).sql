@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2024 at 07:35 PM
+-- Generation Time: Jul 05, 2024 at 08:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `blood_bank`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `email`, `password`) VALUES
+(1, 'admin@gmail.com', '$2y$10$itHVcmKdIzCv3n.1MZEJCe/VS8IKsVZe8b/3npO7e61VeCZZhydo.');
 
 -- --------------------------------------------------------
 
@@ -64,6 +83,20 @@ CREATE TABLE `blood_request` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `donated_blood`
+--
+
+CREATE TABLE `donated_blood` (
+  `id` int(11) NOT NULL,
+  `blood_id` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `donor` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `hospitals`
 --
 
@@ -92,8 +125,7 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `name`, `email`, `message`) VALUES
-(1, 'Miltech', '     leroyyung@gmail.com', 'How can i start with a donation?'),
-(2, 'Miltech', '     leroyyung@gmail.com', 'Okay i will donate');
+(1, 'Miltech', '     leroyyung@gmail.com', 'How can i start with a donation?');
 
 -- --------------------------------------------------------
 
@@ -123,7 +155,12 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `phon
 (2, 'Buffy', 'Huffman', 'temamumot', 'tawu@mailinator.com', 'At animi unde in as', 'female', NULL, '1990-11-05 00:00:00', 'AB+'),
 (3, 'Serina', 'Richards', 'pyboqexy', 'demir@mailinator.com', 'Ex cillum saepe dolo', 'female', NULL, '1998-02-11 00:00:00', 'B+'),
 (4, 'Berk Clark', 'Valdez', '', 'numagewa@mailinator.com', 'Tempore ad est obc', 'female', NULL, '1982-10-09 00:00:00', 'AB-'),
-(5, 'Latifah Lopez', 'Tucker', '', 'nepocibok@mailinator.com', 'Omnis dolor quo cons', 'female', NULL, '1970-03-17 00:00:00', 'AB+');
+(5, 'Latifah Lopez', 'Tucker', '', 'nepocibok@mailinator.com', 'Omnis dolor quo cons', 'female', NULL, '1970-03-17 00:00:00', 'AB+'),
+(6, 'Ryder Conner', 'Owens', '', 'vihubyhod@mailinator.com', 'In quis autem ut ame', 'male', NULL, '2006-10-03 00:00:00', 'A+'),
+(7, 'Sean Hess', 'Ashley', '', 'podaco@mailinator.com', 'Et sapiente iusto qu', '', NULL, '1977-05-03 00:00:00', 'A+'),
+(8, 'Ethan', 'Hopkins', 'mynujyl', 'jajacodygi@mailinator.com', 'Quos perferendis pro', 'female', NULL, '1970-01-31 00:00:00', ''),
+(9, 'Azalia Vincent', 'Rush', '', 'tiquxy@mailinator.com', 'In facilis enim qui ', 'male', NULL, '1985-07-16 00:00:00', 'A+'),
+(10, 'Paula Knight', 'French', '', 'jyma@mailinator.com', 'Ipsum vel nulla nih', 'male', NULL, '1996-03-07 00:00:00', 'A+');
 
 -- --------------------------------------------------------
 
@@ -148,11 +185,22 @@ INSERT INTO `user_address` (`id`, `user_id`, `city`, `postal_code`, `zip`) VALUE
 (2, 2, 'Suscipit maxime nihi', '97148', '75122'),
 (3, 3, 'Quae molestiae nostr', '89214', '97528'),
 (4, 4, 'Aliquid est anim rep', '93976', '28999'),
-(5, 5, 'Ad sit sit hic labo', '89002', '91839');
+(5, 5, 'Ad sit sit hic labo', '89002', '91839'),
+(6, 6, 'Dolor temporibus quo', '44823', '33967'),
+(7, 7, 'Ullamco qui irure es', '31331', '16183'),
+(8, 8, 'Modi sed quis nulla ', '51709', '18901'),
+(9, 9, 'In saepe ea molestia', '51805', '19462'),
+(10, 10, 'Aliquam autem omnis ', '82466', '62240');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `blood_groups`
@@ -166,6 +214,12 @@ ALTER TABLE `blood_groups`
 ALTER TABLE `blood_request`
   ADD PRIMARY KEY (`id`),
   ADD KEY `requests` (`requester_id`);
+
+--
+-- Indexes for table `donated_blood`
+--
+ALTER TABLE `donated_blood`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `hospitals`
@@ -196,6 +250,12 @@ ALTER TABLE `user_address`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `blood_groups`
 --
 ALTER TABLE `blood_groups`
@@ -205,6 +265,12 @@ ALTER TABLE `blood_groups`
 -- AUTO_INCREMENT for table `blood_request`
 --
 ALTER TABLE `blood_request`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `donated_blood`
+--
+ALTER TABLE `donated_blood`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -223,13 +289,13 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user_address`
 --
 ALTER TABLE `user_address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

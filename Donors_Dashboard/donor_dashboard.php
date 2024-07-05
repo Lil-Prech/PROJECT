@@ -34,15 +34,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="blood_requested.html">
+                        <a href="blood_donated.php">
                             <span class="icon">
-                                <i class="ri-drop-fill"></i>
+                                <i class="ri-hand-heart-fill"></i>
                             </span>
-                            <span class="title">Blood Requested</span>
+                            <span class="title">Blood Donated</span>
                         </a>
                     </li>
                     <li>
-                        <a href="appoint.html">
+                        <a href="apointment.php">
                             <span class="icon">
                                 <i class="ri-calendar-schedule-line"></i>
                             </span>
@@ -50,7 +50,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="message.html">
+                        <a href="messages.php">
                             <span class="icon" >
                                 <i class="ri-message-line"></i>
                             </span>
@@ -59,7 +59,7 @@
                     </li>
 
                     <li>
-                        <a href="../index.html">
+                        <a href="../php/admin/logout.php">
                             <span class="icon">
                                 <i class="ri-logout-box-r-line"></i>
                             </span>
@@ -90,7 +90,7 @@
                     <div class="sub-menu-wrap" id="subMenu">
                        <div class="sub-menu">
                         <div class="user-info">
-                            <h3>Mary</h3>
+                            <h3>Prech</h3>
                         </div>
                         <hr>
                         <a href="#" class="sub-menu-link">
@@ -154,7 +154,7 @@
                             <div class="iconBx">
                                 <i class="ri-drop-fill"></i>
                             </div>
-                            <div class="cardname">Blood Collected (in bags)</div>
+                            <div class="cardname">Blood Donated (in bags)</div>
                             <div class="numbers">5 Bags</div>
                         </div>
                     </div>

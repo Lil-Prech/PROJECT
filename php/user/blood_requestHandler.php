@@ -68,6 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $_SESSION['user'] = $email;
     $_SESSION['name'] = $f_name.' '.$l_name;
-    header("Location: ../../blood_form.php");
+    header("Location: ../../Recipient_Dashboard/recipients_dashboard.php");
     exit();
 }

@@ -94,7 +94,7 @@ $blood_groups = getBloodGroup($conn);
         } ?>
       </div>
       <div class="col-12">
-        <button type="submit" class="btnrqst">Send Request</button>
+        <button type="submit" class="btnrqst">Register</button>
       </div>
     </form>
   </section>

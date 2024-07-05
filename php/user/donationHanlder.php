@@ -71,6 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql->execute();
     }
 
-    header("Location: " . $_SERVER['HTTP_REFERER']);
+    header("Location: ../../Donors_Dashboard/donor_Dashboard.php");
     exit();
 }
