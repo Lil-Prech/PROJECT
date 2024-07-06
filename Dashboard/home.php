@@ -66,7 +66,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="bloodstock.html">
+                        <a href="bloodstock.php">
                             <span class="icon">
                                 <i class="ri-store-3-line"></i>
                             </span>
